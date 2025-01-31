@@ -78,7 +78,10 @@ public class EmployeeMain {
 
 
         System.out.println("Get key as an ID and name in the value in map");
-        employeeList.stream().collect(Collectors.toMap(Employee::getId,Employee::getName)).entrySet().forEach(System.out::println);
+        employeeList.stream()
+                .collect(Collectors.toMap(Employee::getId,Employee::getName))
+                .entrySet()
+                .forEach(System.out::println);
 
     }
 
