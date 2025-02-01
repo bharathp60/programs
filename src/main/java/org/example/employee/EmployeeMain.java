@@ -83,10 +83,17 @@ public class EmployeeMain {
                 .entrySet()
                 .forEach(System.out::println);
 
+        System.out.println("How many males and females are present in the developer position");
+        employeeList.stream()
+                .filter(e->e.getPosition().equalsIgnoreCase("developer"))
+                .collect(Collectors.groupingBy(Employee::getGender,Collectors.counting()))
+                .entrySet()
+                .forEach(System.out::println);
+
     }
 
 
-    private static void addEmployeeList(List<Employee> employeeList) {
+    static void addEmployeeList(List<Employee> employeeList) {
         System.out.println("Adding Employees in to the list");
         employeeList.add(new Employee(1,"bharath",28,"male", "developer",2018, 2334.44));
         employeeList.add(new Employee(2,"ramesh",39,"male", "tester",2019, 2879.44));
